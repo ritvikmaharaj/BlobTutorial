@@ -1,0 +1,74 @@
+﻿<Window x:Class="Button.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Button"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+<Window.Resources>
+        <!--Header Style -->
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="Background" Value="AliceBlue"/>
+            <Setter Property="Foreground" Value="BlueViolet"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="8"/>
+
+        </Style>
+        <!-- Cell style using Border for padding-->
+        <Style x:Key="CellStyle" TargetType="Border">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Orientation="Vertical" Margin="10">
+        <!-- Table Header Roy-->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Feature" Style="{StaticResource HeaderStyle}" Width="200"/>
+            <TextBlock Text="Enable" Style="{StaticResource HeaderStyle}" Width="150"/>
+            <TextBlock Text="Mode" Style="{StaticResource HeaderStyle}" Width="150"/>
+        </StackPanel>
+
+        <!-- Table Row 1: Feature A-->
+        <StackPanel Orientation="Horizontal">
+            <Border Style="{StaticResource CellStyle}" Width="200">
+                <TextBlock Text="Feature A" />
+            </Border>
+            <Border Style="{StaticResource CellStyle}" Width="150">
+                <CheckBox x:Name="rbFeatureA" Content="Enabled"/>
+            </Border>
+            <Border Style="{StaticResource CellStyle}" Width="150">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="rbFeatureB_Mode1" GroupName="FeatureBMode" Content="Mode 1" Margin="5"/>
+                    <RadioButton x:Name="rbFeatureB_Mode2" GroupName="FeatureBMode" Content="Mode 2" Margin="5"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <!-- Table Row 3: Feature C-->
+        <StackPanel Orientation="Horizontal">
+            <Border Style="{StaticResource CellStyle}" Width="200">
+                <TextBlock Text="Feature C" />
+            </Border>
+            <Border Style="{StaticResource CellStyle}" Width="150">
+                <CheckBox x:Name="rbFeatureC" Content="Enabled"/>
+            </Border>
+            <Border Style="{StaticResource CellStyle}" Width="150">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="rbFeatureC_Mode1" GroupName="FeatureCMode" Content="Mode 1" Margin="5"/>
+                    <RadioButton x:Name="rbFeatureC_Mode2" GroupName="FeatureCMode" Content="Mode 2" Margin="5"/>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
+
+    </StackPanel>
+    
+</Window>
+
+   
+
